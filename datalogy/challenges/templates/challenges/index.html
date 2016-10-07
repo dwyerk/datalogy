@@ -1,0 +1,40 @@
+{% extends "challenges/site.html" %}
+
+{% block body %}
+<div class="jumbotron" style="position: relative; top: -20px">
+    <div class="container">
+        <h2>Challenge, Accepted</h2>
+        <!--<p><img src="https://imgs.xkcd.com/comics/correlation.png" /></p>-->
+        Browse open Data Science challenges.
+    </div>
+</div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-9">
+            <div class="panel panel-default">
+                <div class="panel-heading">Challenges</div>
+                <div class="panel-body">
+                    <p>stuff?</p>
+                </div>
+
+                <ul>
+                    {% for challenge in challenges %}
+                    <li>
+                        <p>{{ challenge.name }}</p>
+                        <p>{{ challenge.description }}</p>
+                    </li>
+                    {% empty %}
+                    <li>No challenges found.</li>
+                    {% endfor %}
+                </ul>
+
+                <!--<table class="table">-->
+                    <!--<thead><tr><th>Name</th></tr></thead>-->
+                    <!--<tbody><tr><td></td></tr></tbody>-->
+                <!--</table>-->
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}

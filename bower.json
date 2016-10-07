@@ -1,0 +1,21 @@
+{
+  "name": "datalogy",
+  "description": "A site to organize data science challenges.",
+  "main": "",
+  "authors": [
+    "Kevin Dwyer <kevin@pheared.net>"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "private": true,
+  "dependencies": {
+    "bootstrap-material-design": "0.5.10"
+  },
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}

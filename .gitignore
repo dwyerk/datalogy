@@ -137,3 +137,12 @@ $RECYCLE.BIN/
 
 # Windows shortcuts
 *.lnk
+
+.idea
+.project
+.settings
+.vagrant
+bower_components
+*.sqlite3
+*.swp
+
