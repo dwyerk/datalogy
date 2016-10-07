@@ -6,7 +6,7 @@ class Challenger(models.Model):
     # add more things here
 
     def __str__(self):
-        return self.user.name
+        return self.user.username
 
 class Challenge(models.Model):
     name = models.CharField(max_length=200)

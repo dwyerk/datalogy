@@ -68,6 +68,7 @@ Vagrant.configure("2") do |config|
     apt-get update
     apt-get install -y virtualenvwrapper
     apt-get install -y npm nodejs-legacy
+    apt-get install -y sqlite3
     npm install -g bower
   SHELL
 end

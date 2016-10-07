@@ -1,0 +1,54 @@
+{% extends "challenges/site.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">Submit a new Challenge</div>
+            <div class="panel-body">
+                <p>
+                <form action="/challenges/add/" method="post">
+                    {% csrf_token %}
+
+                    {{ form.non_field_errors }}
+
+                    <div class="form-group label-floating {% if form.name.errors %}has-error{% endif %}">
+                        <label for="name" class="control-label">Name</label>
+                        <input type="text" class="form-control" id="name" name="name" value="{{ form.name.value|default_if_none:"" }}" />
+                        {% if form.name.errors %}
+                        <ul class="list-unstyled help-block">
+                            {% for error in form.name.errors %}
+                            <li class="has-error">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <span class="help-block">Make it a catchy short name.</span>
+                        {% endif %}
+                    </div>
+
+                    <div class="form-group label-floating {% if form.description.errors %}has-error{% endif %}">
+                        {{ form.description.errors }}
+                        <label for="description" class="control-label">Description</label>
+                        <textarea rows="10" class="form-control" id="description" name="description">{{ form.description.value|default_if_none:"" }}</textarea>
+
+                        {% if form.description.errors %}
+                        <ul class="list-unstyled help-block">
+                            {% for error in form.description.errors %}
+                            <li class="has-error">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <span class="help-block">Give us some more information.</span>
+                        {% endif %}
+                    </div>
+
+                    <input type="submit" value="Create" class="btn btn-info"/>
+
+                </form>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock body %}
