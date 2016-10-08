@@ -6,6 +6,7 @@ A site to capture our internal data science challenges and submissions.
 vagrant up
 vagrant ssh
 cd /vagrant/datalogy
+pip install -r requirements.txt
 bower install
 ./manage.py migrate
 ./manage.py runserver 0.0.0.0:8000

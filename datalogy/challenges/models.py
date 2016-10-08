@@ -11,6 +11,8 @@ class Challenger(models.Model):
 class Challenge(models.Model):
     name = models.CharField(max_length=200)
     description = models.CharField(max_length=3000)
+    summary = models.CharField(max_length=200)
+    slug = models.SlugField()
     challenger = models.ForeignKey(Challenger, on_delete=models.CASCADE)
 
     def __str__(self):

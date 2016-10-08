@@ -22,6 +22,7 @@ def create(request):
                 challenger.save()
             new_challenge = form.save(commit=False)
             new_challenge.challenger = challenger
+            new_challenge.slug = new_challenge.name.value
             new_challenge.save()
             return HttpResponseRedirect('/')
 
@@ -30,3 +31,12 @@ def create(request):
 
     return render(request, 'challenges/create_challenge.html', {'form': form})
 
+def details(request, identifier):
+    challenge = None
+    try:
+        pk = int(identifier)
+        challenge = models.Challenge.objects.get(pk=pk)
+    except ValueError:
+        challenge = models.Challenge.objects.get(slug=identifier)
+
+    return render(request, 'challenges/challenge_details.html', {'challenge': challenge})

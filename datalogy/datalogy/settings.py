@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'challenges.apps.ChallengesConfig',
+    'django_markdown2',
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',

@@ -3,7 +3,7 @@
 {% block body %}
 <div class="jumbotron" style="position: relative; top: -20px">
     <div class="container">
-        <h2>Challenge, Accepted</h2>
+        <h1>Challenge, Accepted</h1>
         <!--<p><img src="https://imgs.xkcd.com/comics/correlation.png" /></p>-->
         Browse open Data Science challenges.
     </div>
@@ -21,18 +21,14 @@
                 <ul>
                     {% for challenge in challenges %}
                     <li>
-                        <p>{{ challenge.name }}</p>
-                        <p>{{ challenge.description }}</p>
+                        <a href="/challenges/{{ challenge.slug }}"><h2>{{ challenge.name }}</h2></a>
+                        <p>{{ challenge.summary }}</p>
                     </li>
                     {% empty %}
                     <li>No challenges found.</li>
                     {% endfor %}
                 </ul>
 
-                <!--<table class="table">-->
-                    <!--<thead><tr><th>Name</th></tr></thead>-->
-                    <!--<tbody><tr><td></td></tr></tbody>-->
-                <!--</table>-->
             </div>
         </div>
     </div>

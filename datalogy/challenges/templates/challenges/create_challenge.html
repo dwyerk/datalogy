@@ -27,6 +27,22 @@
                         {% endif %}
                     </div>
 
+                <div class="form-group label-floating {% if form.summary.errors %}has-error{% endif %}">
+                        {{ form.summary.errors }}
+                        <label for="summary" class="control-label">Summary</label>
+                        <input type="text" class="form-control" id="summary" name="summary" value="{{ form.summary.value|default_if_none:"" }}" />
+
+                        {% if form.summary.errors %}
+                        <ul class="list-unstyled help-block">
+                            {% for error in form.summary.errors %}
+                            <li class="has-error">{{ error }}</li>
+                            {% endfor %}
+                        </ul>
+                        {% else %}
+                        <span class="help-block">A one liner summary.</span>
+                        {% endif %}
+                    </div>
+
                     <div class="form-group label-floating {% if form.description.errors %}has-error{% endif %}">
                         {{ form.description.errors }}
                         <label for="description" class="control-label">Description</label>

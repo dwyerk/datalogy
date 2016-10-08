@@ -1,0 +1,25 @@
+{% extends "challenges/site.html" %}
+{% load md2 %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="pull-right">
+                    <a href="edit"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span></a>
+                </div>
+                <h3>{{ challenge.name }}</h3>
+            </div>
+            <div class="panel-body">
+                <p>
+                    {{ challenge.summary }}
+                </p>
+                <p>{{ challenge.description|markdown:"safe, code-friendly" }}</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

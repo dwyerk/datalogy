@@ -19,6 +19,6 @@ from django.views.generic import RedirectView
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', RedirectView.as_view(url='/challenges/')),
+    url(r'^$', RedirectView.as_view(url='/challenges/', permanent=False)),
     url(r'^challenges/', include('challenges.urls')),
 ]
