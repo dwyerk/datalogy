@@ -9,6 +9,7 @@ cd /vagrant/datalogy
 pip install -r requirements.txt
 bower install
 ./manage.py migrate
+./manage.py createsuperuser
 ./manage.py runserver 0.0.0.0:8000
 ```
 Visit http://localhost:8000
