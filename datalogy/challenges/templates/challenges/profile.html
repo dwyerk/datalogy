@@ -1,0 +1,15 @@
+{% extends "challenges/site.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-8">
+            <p>Username: {{ request.user.username }}</p>
+            <p>Challenges:</p>
+            <p>Submissions:</p>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}

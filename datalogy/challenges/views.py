@@ -1,6 +1,6 @@
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
-from django.http import HttpResponse
+from django.urls import reverse
 from django.utils.text import slugify
 
 from . import forms
@@ -61,3 +61,4 @@ def get_challenge(identifier):
     except ValueError:
         challenge = models.Challenge.objects.get(slug=identifier)
     return challenge
+

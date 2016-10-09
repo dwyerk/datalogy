@@ -1,0 +1,41 @@
+{% extends "challenges/site.html" %}
+
+{% block body %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <form method="POST" action="">
+                {% csrf_token %}
+                {{ form.non_field_errors }}
+                <div class="form-group label-floating {% if form.username.errors %}has-error{% endif %}">
+                    <label for="username" class="control-label">Username</label>
+                    <input type="text" class="form-control" id="username" name="username" value="{{ form.username.value|default_if_none:"" }}" />
+                    {% if form.username.errors %}
+                    <ul class="list-unstyled help-block">
+                        {% for error in form.username.errors %}
+                        <li class="has-error">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+
+                <div class="form-group label-floating {% if form.password.errors %}has-error{% endif %}">
+                    <label for="password" class="control-label">Password</label>
+                    <input type="password" class="form-control" id="password" name="password" value="{{ form.password.value|default_if_none:"" }}" />
+                    {% if form.password.errors %}
+                    <ul class="list-unstyled help-block">
+                        {% for error in form.password.errors %}
+                        <li class="has-error">{{ error }}</li>
+                        {% endfor %}
+                    </ul>
+                    {% endif %}
+                </div>
+
+                <input type="submit" value="Login" class="btn btn-info"/>
+            </form>
+        </div>
+    </div>
+</div>
+
+{% endblock body %}
