@@ -29,11 +29,13 @@
                     <!--<li class="active"><a href="javascript:void(0)">Active</a></li>-->
                     <li><a href="/challenges">Challenges</a></li>
                 </ul>
-                <form class="navbar-form navbar-left">
-                    <div class="form-group">
-                        <input type="text" class="form-control col-sm-8" placeholder="Search">
-                    </div>
-                </form>
+
+                <!--<form class="navbar-form navbar-left">-->
+                    <!--<div class="form-group">-->
+                        <!--<input type="text" class="form-control col-sm-8" placeholder="Search">-->
+                    <!--</div>-->
+                <!--</form>-->
+
                 <ul class="nav navbar-nav navbar-right">
                     {% if request.user.is_staff %}
                     <li><a href="/admin">Admin</a></li>

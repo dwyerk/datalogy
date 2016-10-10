@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import permission_required
 from django.http import HttpResponseRedirect
 from django.shortcuts import render, get_object_or_404
 from django.urls import reverse
@@ -6,13 +7,13 @@ from django.utils.text import slugify
 from . import forms
 from . import models
 
-# Create your views here.
 def index(request):
     challenges = models.Challenge.objects.all()
     return render(request, 'challenges/index.html', {
         'challenges': challenges
     })
 
+@permission_required('challenges.add_challenge', raise_exception=True)
 def create(request):
     if request.method == 'POST':
         form = forms.ChallengeForm(request.POST)
@@ -36,6 +37,7 @@ def details(request, identifier):
     challenge = get_challenge(identifier)
     return render(request, 'challenges/challenge_details.html', {'challenge': challenge})
 
+@permission_required('challenges.change_challenge', raise_exception=True)
 def edit(request, identifier):
     challenge = get_challenge(identifier)
     if request.method == 'POST':
@@ -52,6 +54,14 @@ def edit(request, identifier):
                       'form_action': '{}/edit'.format(challenge.slug),
                       'submit_text': 'Update'
                   })
+
+@permission_required('challenges.delete_challenge', raise_exception=True)
+def delete(request, identifier):
+    challenge = get_challenge(identifier)
+    if request.method == 'POST':
+        challenge.delete()
+        return HttpResponseRedirect('/challenges/')
+    return render(request, 'challenges/delete_challenge.html', {'challenge': challenge})
 
 def get_challenge(identifier):
     challenge = None

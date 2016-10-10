@@ -1,4 +1,5 @@
 {% extends "challenges/site.html" %}
+{% load humanize %}
 
 {% block body %}
 <div class="jumbotron" style="position: relative; top: -20px">
@@ -15,21 +16,34 @@
             <div class="panel panel-default">
                 <div class="panel-heading">Challenges</div>
                 <div class="panel-body">
-                    <p><a href="add" class="btn btn-raised btn-info">Submit a new Challenge</a></p>
+
+                    {% if challenges %}
+                    <div class="list-group">
+                        {% for challenge in challenges %}
+                        <a href="/challenges/{{ challenge.slug }}">
+                            <div class="list-group-item">
+                                <div class="row-action-primary">
+                                    <i class="material-icons">timeline</i>
+                                </div>
+                                <div class="row-content">
+                                    <div class="least-content">updated {{ challenge.updatedate|naturalday }}</div>
+                                    <h4 class="list-group-item-heading">{{ challenge.name }}</h4>
+
+                                    <p class="list-group-item-text">{{ challenge.summary }}</p>
+                                </div>
+                            </div>
+                        </a>
+                        <div class="list-group-separator"></div>
+                        {% endfor %}
+                    </div>
+                    {% else %}
+                    No challenges found.
+                    {% endif %}
                 </div>
-
-                <ul>
-                    {% for challenge in challenges %}
-                    <li>
-                        <a href="/challenges/{{ challenge.slug }}"><h2>{{ challenge.name }}</h2></a>
-                        <p>{{ challenge.summary }}</p>
-                    </li>
-                    {% empty %}
-                    <li>No challenges found.</li>
-                    {% endfor %}
-                </ul>
-
             </div>
+        </div>
+        <div class="col-md-3">
+            <p><a href="add" class="btn btn-raised btn-info">Submit a new Challenge</a></p>
         </div>
     </div>
 </div>
