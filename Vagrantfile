@@ -26,6 +26,13 @@ Vagrant.configure("2") do |config|
 
   if Vagrant.has_plugin?("vagrant-cachier")
     config.cache.scope = :box
+
+    # This workaround quells warnings due to a bug in 16.04
+    config.cache.synced_folder_opts = {
+        owner: "_apt",
+        group: "_apt",
+        mount_options: ["dmode=777", "fmode=666"]
+    }
   end
 
 end
