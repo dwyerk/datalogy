@@ -1,0 +1,23 @@
+{
+  "name": "datalogy",
+  "version": "1.0.0",
+  "description": "challenge / response system",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dwyerk/datalogy.git"
+  },
+  "author": "",
+  "license": "BSD-2-Clause",
+  "bugs": {
+    "url": "https://github.com/dwyerk/datalogy/issues"
+  },
+  "homepage": "https://github.com/dwyerk/datalogy#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-livereload": "^3.8.1"
+  }
+}
