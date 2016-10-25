@@ -143,6 +143,7 @@ $RECYCLE.BIN/
 .settings
 .vagrant
 bower_components
+node_modules
 *.sqlite3
 *.swp
 

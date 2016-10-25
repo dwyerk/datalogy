@@ -17,10 +17,16 @@ workon datalogy
 # Install dependencies
 pip install -r requirements.txt
 bower install
+npm install
 
-cd /vagrant/datalogy
-./manage.py migrate
-./manage.py createsuperuser
-./manage.py runserver 0.0.0.0:8000
+# One time setup:
+datalogy/manage.py migrate
+datalogy/manage.py createsuperuser
+
+# Start the livereload server
+gulp
+
+# Start the django server
+datalogy/manage.py runserver 0.0.0.0:8000
 ```
 Visit [http://localhost:8000](http://localhost:8000)
