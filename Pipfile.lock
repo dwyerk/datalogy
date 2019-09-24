@@ -1,0 +1,73 @@
+{
+    "_meta": {
+        "hash": {
+            "sha256": "527e969bc44b3ccd0f2885fa8e7b9203f8c0798d9638ce7a39322ed00d6602ef"
+        },
+        "pipfile-spec": 6,
+        "requires": {
+            "python_version": "3.5"
+        },
+        "sources": [
+            {
+                "name": "pypi",
+                "url": "https://pypi.org/simple",
+                "verify_ssl": true
+            }
+        ]
+    },
+    "default": {
+        "beautifulsoup4": {
+            "hashes": [
+                "sha256:05668158c7b85b791c5abde53e50265e16f98ad601c402ba44d70f96c4159612",
+                "sha256:25288c9e176f354bf277c0a10aa96c782a6a18a17122dba2e8cec4a97e03343b",
+                "sha256:f040590be10520f2ea4c2ae8c3dae441c7cfff5308ec9d58a0ec0c1b8f81d469"
+            ],
+            "version": "==4.8.0"
+        },
+        "django": {
+            "hashes": [
+                "sha256:830d5d40a1705089502bba70605ab3246831440ffc16d1501dfeeef5f4b9c845",
+                "sha256:94395804ad80f68d66090a74d68ff2583b43333e1785a026c2aa10cf161642a6"
+            ],
+            "index": "pypi",
+            "version": "==1.11.22"
+        },
+        "django-livereload": {
+            "hashes": [
+                "sha256:41e9a04c9f906e0bdc66fd0f43ee30b89a269cab5f88ec1a48fa7eb948946e8c",
+                "sha256:e1956fd2298a1fb71ebe977d94f381467b40b2182ae828df82d4698684c92343"
+            ],
+            "index": "pypi",
+            "version": "==1.5"
+        },
+        "django-markdown2": {
+            "hashes": [
+                "sha256:55661ff401e5ed1184c454687c88550d5bcd5890f2dd00849d153d2c86025f94"
+            ],
+            "index": "pypi",
+            "version": "==0.3.0"
+        },
+        "markdown2": {
+            "hashes": [
+                "sha256:7ff88e00b396c02c8e1ecd8d176cfa418fb01fe81234dcea77803e7ce4f05dbe",
+                "sha256:882d3607fc023cdea0ac2cd0e1147617fcb0361cb1133d3ff095417f995ff270"
+            ],
+            "version": "==2.3.8"
+        },
+        "pytz": {
+            "hashes": [
+                "sha256:26c0b32e437e54a18161324a2fca3c4b9846b74a8dccddd843113109e1116b32",
+                "sha256:c894d57500a4cd2d5c71114aaab77dbab5eabd9022308ce5ac9bb93a60a6f0c7"
+            ],
+            "version": "==2019.2"
+        },
+        "soupsieve": {
+            "hashes": [
+                "sha256:72b5f1aea9101cf720a36bb2327ede866fd6f1a07b1e87c92a1cc18113cbc946",
+                "sha256:e4e9c053d59795e440163733a7fec6c5972210e1790c507e4c7b051d6c5259de"
+            ],
+            "version": "==1.9.2"
+        }
+    },
+    "develop": {}
+}

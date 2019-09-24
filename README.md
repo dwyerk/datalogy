@@ -9,13 +9,12 @@ vagrant ssh
 cd /vagrant
 
 # If this is your first time:
-mkvirtualenv --python=`which python3` datalogy
+pipenv install
 
-# Else:
-workon datalogy
+# Enable the virtual environment:
+pipenv shell
 
 # Install dependencies
-pip install -r requirements.txt
 bower install
 npm install
 
