@@ -9,3 +9,10 @@ RUN npm install -g bower && \
     npm install -g gulp-cli && \
     pip3 install pipenv
 
+COPY . /app
+
+RUN cd /app && \
+    pipenv install && \
+    npm install
+
+CMD /app/service.sh
