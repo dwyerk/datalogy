@@ -8,7 +8,7 @@
 Vagrant.configure("2") do |config|
   config.vm.define "dev", primary: true do |dev|
 
-    dev.vm.box = "ubuntu/xenial64"
+    dev.vm.box = "ubuntu/focal64"
 
     dev.vm.network "forwarded_port", guest: 8000, host: 8000
     dev.vm.network "forwarded_port", guest: 35729, host: 35729
@@ -16,12 +16,12 @@ Vagrant.configure("2") do |config|
     dev.vm.provision "shell", inline: <<-SHELL
       export DEBIAN_FRONTEND=noninteractive
       apt-get update
-      apt-get install -y python-pip
-      apt-get install -y npm nodejs-legacy
+      apt-get install -y python3-pip python-is-python3
+      apt-get install -y npm
       apt-get install -y sqlite3
       npm install -g bower
       npm install -g gulp-cli
-      pip install --user pipenv
+      pip3 install pipenv
     SHELL
   end
 
